@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umburio Self-Help Group - Empowering Communities</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/carousel.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">U</div>
+                <div class="logo-text">
+                    <h1>Umburio</h1>
+                    <p>Self-Help Group</p>
+                </div>
+            </div>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
+                <li class="nav-item"><a href="#events" class="nav-link">Events</a></li>
+                <li class="nav-item"><a href="#businesses" class="nav-link">Businesses</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#community" class="nav-link">Community</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">More <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#terms">Terms</a>
+                        <a href="#privacy">Privacy</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="#login" class="nav-link login-btn" id="loginBtn">Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Next Meeting Widget -->
+    <div class="meeting-widget" id="meetingWidget">
+        <div class="widget-header">
+            <h3><i class="fas fa-calendar-alt"></i> Next Meeting</h3>
+            <button class="close-widget" id="closeWidget">&times;</button>
+        </div>
+        <div class="widget-content">
+            <div class="meeting-date" id="nextMeetingDate">Loading...</div>
+            <div class="meeting-time">Sunday, 2:00 PM - 5:00 PM</div>
+            <div class="meeting-location">Rhino Inn Restaurant</div>
+            <a href="#rsvp" class="rsvp-btn">RSVP Now</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">UMBURIO SELF-HELP GROUP</h1>
+            <p class="hero-subtitle">Empowering Members, Transforming Communities</p>
+            <p class="hero-description">
+                A democratic membership organization focused on unlocking financial opportunities, 
+                promoting welfare, and driving community development through collective action.
+            </p>
+            <div class="hero-buttons">
+                <a href="#join" class="btn-primary">Join Our Community</a>
+                <a href="#about" class="btn-secondary">Learn More</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Message from Chairman -->
+    <section class="message-section" id="message">
+        <div class="container">
+            <h2 class="section-title">Message from the Chairperson</h2>
+            <div class="message-content">
+                <div class="chairman-image">
+                    <img src="images/chairperson.jpg" alt="Chairperson" class="chairman-img">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="chairman-message">
+                    <h3>Unity of Purpose</h3>
+                    <p>
+                        Welcome to Umburio Self-Help Group, where we believe in the power of unity, 
+                        democratic participation, and collective growth. Our foundation is built on 
+                        principles of equality and non-discrimination, where every member's voice matters.
+                    </p>
+                    <p>
+                        We are committed to pulling together to overcome barriers to self-growth and 
+                        development. Through our shared vision and collaborative efforts, we create 
+                        opportunities that individual members could not achieve alone.
+                    </p>
+                    <p>
+                        Together, we are building a community that supports each other's welfare, 
+                        unlocks financial opportunities, and drives sustainable development for all 
+                        our members and the wider community.
+                    </p>
+                    <div class="signature">
+                        <p><strong>Chairperson</strong></p>
+                        <p>Umburio Self-Help Group</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="objectives-grid">
+                <div class="objective-card">
+                    <div class="objective-icon">
+                        <i class="fas fa-unlock-alt"></i>
+                    </div>
+                    <h3>Unlock Opportunities</h3>
+                    <p>Creating access to financial resources and development opportunities for all members</p>
+                </div>
+                <div class="objective-card">
+                    <div class="objective-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Member Welfare</h3>
+                    <p>Prioritizing the well-being and personal development of every group member</p>
+                </div>
+                <div class="objective-card">
+                    <div class="objective-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community Progress</h3>
+                    <p>Driving sustainable development and progress in our local community</p>
+                </div>
+                <div class="objective-card">
+                    <div class="objective-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Democratic Values</h3>
+                    <p>Operating with transparency, equality, and democratic decision-making</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pictorials Carousel -->
+    <section class="pictorials-section">
+        <div class="container">
+            <h2 class="section-title">Our Activities</h2>
+            <div class="carousel-container">
+                <div class="carousel" id="imageCarousel">
+                    <!-- Images will be loaded dynamically -->
+                </div>
+                <button class="carousel-btn prev-btn" id="prevBtn">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="carousel-btn next-btn" id="nextBtn">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location-section" id="location">
+        <div class="container">
+            <h2 class="section-title">Where We Are Based</h2>
+            <div class="location-content">
+                <div class="location-info">
+                    <h3>Head Office Location</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Bukira East Ward, Kehancha Town</p>
+                    <p><i class="fas fa-building"></i> Behind Primara Hotel at Rhino Inn Restaurant</p>
+                    
+                    <div class="contact-details">
+                        <h4>Contact Information</h4>
+                        <div class="phone-protected" id="phoneProtected">
+                            <p><i class="fas fa-user-tie"></i> Communication Assistant: Mr. Gisiri Maroa</p>
+                            <div class="phone-reveal">
+                                <p>Phone number hidden for security</p>
+                                <button class="reveal-btn" id="revealPhoneBtn">Reveal Phone Number</button>
+                            </div>
+                        </div>
+                        <div class="phone-visible" id="phoneVisible" style="display: none;">
+                            <p><i class="fas fa-phone"></i> Mobile: <a href="tel:+254728560925">0728 560 925</a></p>
+                            <p class="note">This number is for registered members only</p>
+                        </div>
+                    </div>
+                    
+                    <div class="registration-form" id="registrationForm">
+                        <h4>Register to Access Contact Details</h4>
+                        <form id="contactAccessForm">
+                            <div class="form-group">
+                                <input type="text" placeholder="Full Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" placeholder="Email Address" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" placeholder="Phone Number" required>
+                            </div>
+                            <button type="submit" class="btn-primary">Register & View Number</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="location-map">
+                    <div class="map-placeholder">
+                        <i class="fas fa-map"></i>
+                        <p>Interactive Map Here</p>
+                        <p class="map-coordinates">Lat: -1.2833, Long: 34.7500</p>
+                    </div>
+                    <!-- You can embed Google Maps here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <form id="contactForm" class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn-primary">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners-section" id="partners">
+        <div class="container">
+            <h2 class="section-title">Our Partners</h2>
+            <div class="partners-grid">
+                <div class="partner-card">
+                    <div class="partner-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>County Government</h3>
+                    <p>Migori County Ministries</p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-icon">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <h3>National Government</h3>
+                    <p>Relevant National Ministries</p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Social Services</h3>
+                    <p>Ministry of Social Services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter-section">
+        <div class="container">
+            <h2 class="section-title">Stay Updated</h2>
+            <p class="newsletter-description">Subscribe to our newsletter for updates on events and opportunities</p>
+            <form id="newsletterForm" class="newsletter-form">
+                <div class="newsletter-input">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn-primary">Subscribe</button>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="newsletterConsent" required>
+                    <label for="newsletterConsent">I agree to receive newsletters and updates</label>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <div class="logo-icon">U</div>
+                        <div class="logo-text">
+                            <h3>Umburio</h3>
+                            <p>Self-Help Group</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Empowering communities through collective action and mutual support since 2015.
+                    </p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#services">Services</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#disclaimer">Disclaimer</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Kehancha Town, Migori County</li>
+                        <li><i class="fas fa-envelope"></i> info@umburio.org</li>
+                        <li class="registration-badge">
+                            <i class="fas fa-certificate"></i>
+                            Registered with Social Services Ministry
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2025 Umburio Self-Help Group. All rights reserved.</p>
+                    <p>Registration No: SHG/MIG/2025/0456</p>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Member Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn-primary">Login</button>
+            </form>
+            <p class="modal-footer">Not a member? <a href="#register">Register here</a></p>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="js/meeting-calculator.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/form-handler.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
