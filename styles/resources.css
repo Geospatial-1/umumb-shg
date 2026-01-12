@@ -708,4 +708,135 @@
         flex-direction: column;
         text-align: center;
     }
+    /* Add to styles/resources.css */
+
+/* Notifications */
+.notification {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 3000;
+    transform: translateX(150%);
+    transition: transform 0.3s ease-out;
+    max-width: 350px;
+    border-left: 4px solid var(--neon-green);
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+.notification.success {
+    border-left-color: #4caf50;
+}
+
+.notification.success i {
+    color: #4caf50;
+}
+
+.notification.error {
+    border-left-color: #f44336;
+}
+
+.notification.error i {
+    color: #f44336;
+}
+
+/* User Menu */
+.user-menu {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    width: 250px;
+    overflow: hidden;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.menu-header {
+    padding: 20px;
+    background: var(--dark-green);
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.menu-header i {
+    font-size: 2rem;
+    color: var(--neon-green);
+}
+
+.menu-items {
+    padding: 10px 0;
+}
+
+.menu-items a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    color: var(--dark-green);
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.menu-items a:hover {
+    background: #f0f9f0;
+}
+
+.menu-items hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 10px 0;
+}
+
+/* Error Messages */
+.error-message {
+    background: #ffebee;
+    color: #c62828;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #f44336;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.success-message {
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #4caf50;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Resource Description */
+.resource-description {
+    display: block;
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 5px;
 }
