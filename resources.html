@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umburio Self-Help Group - Resources</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/resources.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Supabase JS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">U</div>
+                <div class="logo-text">
+                    <h1>Umburio</h1>
+                    <p>Self-Help Group</p>
+                </div>
+            </div>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#resources" class="nav-link active">Resources</a></li>
+                <li class="nav-item"><a href="index.html#events" class="nav-link">Events</a></li>
+                <li class="nav-item"><a href="index.html#businesses" class="nav-link">Businesses</a></li>
+                <li class="nav-item"><a href="index.html#services" class="nav-link">Services</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">More <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="index.html#terms">Terms</a>
+                        <a href="index.html#privacy">Privacy</a>
+                        <a href="index.html#contact">Contact</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link login-btn" id="authButton">
+                        <span id="authText">Login</span>
+                        <i class="fas fa-user" id="authIcon"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Authentication Modal -->
+    <div class="auth-modal" id="authModal">
+        <div class="auth-container">
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Login</button>
+                <button class="auth-tab" data-tab="register">Register</button>
+                <span class="close-auth">&times;</span>
+            </div>
+            
+            <!-- Login Form -->
+            <form id="loginForm" class="auth-form active">
+                <div class="form-group">
+                    <label for="loginEmail">Email Address</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <div class="password-input">
+                        <input type="password" id="loginPassword" required>
+                        <button type="button" class="toggle-password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="form-options">
+                    <label class="checkbox">
+                        <input type="checkbox" id="rememberMe">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#forgot" class="forgot-link">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn-primary auth-submit">
+                    <span>Login</span>
+                    <div class="spinner hidden" id="loginSpinner"></div>
+                </button>
+                <div class="auth-error" id="loginError"></div>
+            </form>
+            
+            <!-- Registration Form -->
+            <form id="registerForm" class="auth-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email Address</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <div class="password-input">
+                        <input type="password" id="registerPassword" required>
+                        <button type="button" class="toggle-password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <small class="password-hint">Minimum 8 characters with uppercase, lowercase, and number</small>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <div class="password-input">
+                        <input type="password" id="confirmPassword" required>
+                        <button type="button" class="toggle-password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="termsAgree" required>
+                    <label for="termsAgree">
+                        I agree to the <a href="#terms">Terms of Service</a> and <a href="#privacy">Privacy Policy</a>
+                    </label>
+                </div>
+                <button type="submit" class="btn-primary auth-submit">
+                    <span>Create Account</span>
+                    <div class="spinner hidden" id="registerSpinner"></div>
+                </button>
+                <div class="auth-error" id="registerError"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Content (Protected) -->
+    <main class="resources-container" id="resourcesContent">
+        <!-- Loading State -->
+        <div class="loading-state" id="loadingState">
+            <div class="spinner large"></div>
+            <p>Loading resources...</p>
+        </div>
+
+        <!-- Protected Content (Shown after login) -->
+        <div class="protected-content hidden" id="protectedContent">
+            <!-- User Welcome Section -->
+            <section class="user-welcome">
+                <div class="container">
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="user-details">
+                            <h2 id="userGreeting">Welcome!</h2>
+                            <p id="userEmail"></p>
+                            <div class="user-stats">
+                                <span class="stat">
+                                    <i class="fas fa-download"></i>
+                                    Downloads: <span id="downloadCount">0</span>
+                                </span>
+                                <span class="stat">
+                                    <i class="fas fa-coins"></i>
+                                    Balance: KSh <span id="userBalance">0</span>
+                                </span>
+                            </div>
+                        </div>
+                        <button class="btn-secondary" id="logoutBtn">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Resources Table -->
+            <section class="resources-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title">Group Resources</h2>
+                        <p class="section-subtitle">Access free and paid resources for members only</p>
+                    </div>
+
+                    <!-- Resources Filter -->
+                    <div class="resources-filter">
+                        <button class="filter-btn active" data-filter="all">All Resources</button>
+                        <button class="filter-btn" data-filter="free">Free Downloads</button>
+                        <button class="filter-btn" data-filter="paid">Paid Resources</button>
+                        <div class="search-box">
+                            <input type="text" id="resourceSearch" placeholder="Search resources...">
+                            <i class="fas fa-search"></i>
+                        </div>
+                    </div>
+
+                    <!-- Resources Table -->
+                    <div class="table-container">
+                        <table class="resources-table">
+                            <thead>
+                                <tr>
+                                    <th>Resource Name</th>
+                                    <th>Type</th>
+                                    <th>Format</th>
+                                    <th>Size</th>
+                                    <th>Price</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="resourcesTableBody">
+                                <!-- Resources will be loaded dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Resources Legend -->
+                    <div class="resources-legend">
+                        <div class="legend-item">
+                            <span class="legend-free"></span> Free Resource
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-paid"></span> Paid Resource
+                        </div>
+                        <div class="legend-item">
+                            <i class="fas fa-check-circle available"></i> Available
+                        </div>
+                        <div class="legend-item">
+                            <i class="fas fa-clock pending"></i> Pending Payment
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Download History -->
+            <section class="history-section">
+                <div class="container">
+                    <h3 class="section-subtitle">
+                        <i class="fas fa-history"></i> Download History
+                    </h3>
+                    <div class="history-container" id="downloadHistory">
+                        <!-- History will be loaded dynamically -->
+                        <p class="empty-history">No downloads yet</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Payment Section -->
+            <section class="payment-section">
+                <div class="container">
+                    <h3 class="section-subtitle">
+                        <i class="fas fa-wallet"></i> Add Funds
+                    </h3>
+                    <div class="payment-options">
+                        <div class="payment-card">
+                            <div class="payment-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h4>M-Pesa</h4>
+                            <p>Pay via M-Pesa</p>
+                            <button class="btn-secondary payment-btn" data-method="mpesa">
+                                Add Funds
+                            </button>
+                        </div>
+                        <div class="payment-card">
+                            <div class="payment-icon">
+                                <i class="fab fa-paypal"></i>
+                            </div>
+                            <h4>PayPal</h4>
+                            <p>International payments</p>
+                            <button class="btn-secondary payment-btn" data-method="paypal">
+                                Add Funds
+                            </button>
+                        </div>
+                        <div class="payment-card">
+                            <div class="payment-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <h4>Bank Transfer</h4>
+                            <p>Direct bank deposit</p>
+                            <button class="btn-secondary payment-btn" data-method="bank">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Warning Section -->
+            <section class="warning-section">
+                <div class="container">
+                    <div class="warning-box">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <div class="warning-content">
+                            <h3>Important Notice</h3>
+                            <p>
+                                All resources are protected by copyright law. It is illegal to share, 
+                                distribute, or reproduce any paid resources without explicit permission 
+                                from Umburio Self-Help Group. Violators will be prosecuted and may face 
+                                legal action.
+                            </p>
+                            <p class="warning-note">
+                                <i class="fas fa-info-circle"></i>
+                                Device information and download activity are tracked for security purposes.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Payment Modal -->
+    <div class="payment-modal" id="paymentModal">
+        <div class="modal-content">
+            <span class="close-payment">&times;</span>
+            <h2 id="paymentTitle">Add Funds</h2>
+            <form id="paymentForm">
+                <div class="form-group">
+                    <label for="paymentAmount">Amount (KSh)</label>
+                    <input type="number" id="paymentAmount" min="100" step="100" value="500" required>
+                    <div class="amount-suggestions">
+                        <button type="button" class="amount-btn" data-amount="500">500</button>
+                        <button type="button" class="amount-btn" data-amount="1000">1,000</button>
+                        <button type="button" class="amount-btn" data-amount="5000">5,000</button>
+                    </div>
+                </div>
+                <div class="form-group" id="mpesaFields">
+                    <label for="mpesaNumber">M-Pesa Number</label>
+                    <input type="tel" id="mpesaNumber" placeholder="07XX XXX XXX">
+                </div>
+                <div class="form-group">
+                    <label for="paymentEmail">Email for Receipt</label>
+                    <input type="email" id="paymentEmail">
+                </div>
+                <button type="submit" class="btn-primary payment-submit">
+                    <i class="fas fa-lock"></i> Proceed to Payment
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Download Modal -->
+    <div class="download-modal" id="downloadModal">
+        <div class="modal-content">
+            <span class="close-download">&times;</span>
+            <h2 id="downloadTitle">Download Resource</h2>
+            <div class="download-details">
+                <p><strong>Resource:</strong> <span id="resourceName"></span></p>
+                <p><strong>Price:</strong> KSh <span id="resourcePrice"></span></p>
+                <p><strong>Your Balance:</strong> KSh <span id="currentBalance"></span></p>
+            </div>
+            <div class="download-options" id="downloadOptions">
+                <!-- Options will be filled dynamically -->
+            </div>
+            <div class="download-warning">
+                <i class="fas fa-exclamation-circle"></i>
+                <p>By downloading, you agree not to share this resource with unauthorized parties.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <div class="logo-icon">U</div>
+                        <div class="logo-text">
+                            <h3>Umburio</h3>
+                            <p>Self-Help Group</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Secure member portal for accessing group resources and documents.
+                    </p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#free">Free Documents</a></li>
+                        <li><a href="#paid">Paid Resources</a></li>
+                        <li><a href="#forms">Application Forms</a></li>
+                        <li><a href="#legal">Legal Documents</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#contact">Contact Support</a></li>
+                        <li><a href="#troubleshoot">Troubleshooting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Security</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-shield-alt"></i> SSL Encrypted</li>
+                        <li><i class="fas fa-user-lock"></i> Member Only Access</li>
+                        <li><i class="fas fa-history"></i> Activity Logged</li>
+                        <li class="security-badge">
+                            <i class="fas fa-certificate"></i>
+                            Secure Resource Portal
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2025 Umburio Self-Help Group. All rights reserved.</p>
+                    <p>Resource Portal v1.0 | Last Updated: <span id="lastUpdated"></span></p>
+                </div>
+                <div class="footer-links-horizontal">
+                    <a href="#privacy">Privacy Policy</a> |
+                    <a href="#terms">Terms of Service</a> |
+                    <a href="#cookies">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="js/auth.js"></script>
+    <script src="js/resources.js"></script>
+    <script src="js/payment.js"></script>
+    <script>
+        // Initialize last updated date
+        document.getElementById('lastUpdated').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    </script>
+</body>
+</html>
