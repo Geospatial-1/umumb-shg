@@ -5,22 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Umburio Self-Help Group - Empowering Communities</title>
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/carousel.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo">
-                <div class="logo-icon">U</div>
-                <div class="logo-text">
-                    <h1>Umburio</h1>
-                    <p>Self-Help Group</p>
-                </div>
+                <a href="index.html" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: inherit;">
+                    <div class="logo-icon">U</div>
+                    <div class="logo-text">
+                        <h1>Umburio</h1>
+                        <p>Self-Help Group</p>
+                    </div>
+                </a>
             </div>
             
             <div class="menu-toggle" id="mobile-menu">
@@ -29,22 +31,23 @@
                 <span class="bar"></span>
             </div>
             
-            <ul class="nav-menu">
-                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
                 <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
-                <li class="nav-item"><a href="#events" class="nav-link">Events</a></li>
-                <li class="nav-item"><a href="#businesses" class="nav-link">Businesses</a></li>
-                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
-                <li class="nav-item"><a href="#community" class="nav-link">Community</a></li>
+                <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+                <li class="nav-item"><a href="business.html" class="nav-link">Businesses</a></li>
+                <li class="nav-item"><a href="member-login.html" class="nav-link">Member Login</a></li>
                 <li class="nav-item dropdown">
                     <a href="#" class="nav-link">More <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
+                        <a href="#services">Services</a>
+                        <a href="#community">Community</a>
+                        <a href="#about">About Us</a>
+                        <a href="#contact">Contact</a>
                         <a href="#terms">Terms</a>
                         <a href="#privacy">Privacy</a>
-                        <a href="#contact">Contact</a>
                     </div>
                 </li>
-                <li class="nav-item"><a href="#login" class="nav-link login-btn" id="loginBtn">Login</a></li>
             </ul>
         </div>
     </nav>
@@ -59,29 +62,31 @@
             <div class="meeting-date" id="nextMeetingDate">Loading...</div>
             <div class="meeting-time">Sunday, 2:00 PM - 5:00 PM</div>
             <div class="meeting-location">Rhino Inn Restaurant</div>
-            <a href="#rsvp" class="rsvp-btn">RSVP Now</a>
+            <a href="events.html" class="rsvp-btn">View Events</a>
         </div>
     </div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-content">
-            <h1 class="hero-title">UMBURIO SELF-HELP GROUP</h1>
-            <p class="hero-subtitle">Empowering Members, Transforming Communities</p>
-            <p class="hero-description">
-                A democratic membership organization focused on unlocking financial opportunities, 
-                promoting welfare, and driving community development through collective action.
-            </p>
-            <div class="hero-buttons">
-                <a href="#join" class="btn-primary">Join Our Community</a>
-                <a href="#about" class="btn-secondary">Learn More</a>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">UMBURIO SELF-HELP GROUP</h1>
+                <p class="hero-subtitle">Empowering Members, Transforming Communities</p>
+                <p class="hero-description">
+                    A democratic membership organization focused on unlocking financial opportunities, 
+                    promoting welfare, and driving community development through collective action.
+                </p>
+                <div class="hero-buttons">
+                    <a href="member-login.html" class="btn-primary">Become a Member</a>
+                    <a href="#about" class="btn-secondary">Learn More</a>
+                </div>
             </div>
-        </div>
-        <div class="hero-image">
-            <div class="floating-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
+            <div class="hero-image">
+                <div class="floating-shapes">
+                    <div class="shape shape-1"></div>
+                    <div class="shape shape-2"></div>
+                    <div class="shape shape-3"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -92,7 +97,7 @@
             <h2 class="section-title">Message from the Chairperson</h2>
             <div class="message-content">
                 <div class="chairman-image">
-                    <img src="images/chairperson.jpg" alt="Chairperson" class="chairman-img">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Chairperson" class="chairman-img">
                     <div class="image-overlay"></div>
                 </div>
                 <div class="chairman-message">
@@ -158,13 +163,13 @@
         </div>
     </section>
 
-    <!-- Pictorials Carousel -->
-    <section class="pictorials-section">
+    <!-- Gallery Carousel -->
+    <section class="gallery-section" id="gallery">
         <div class="container">
             <h2 class="section-title">Our Activities</h2>
             <div class="carousel-container">
-                <div class="carousel" id="imageCarousel">
-                    <!-- Images will be loaded dynamically -->
+                <div class="carousel-track" id="carouselTrack">
+                    <!-- Carousel items will be dynamically added -->
                 </div>
                 <button class="carousel-btn prev-btn" id="prevBtn">
                     <i class="fas fa-chevron-left"></i>
@@ -172,6 +177,46 @@
                 <button class="carousel-btn next-btn" id="nextBtn">
                     <i class="fas fa-chevron-right"></i>
                 </button>
+                <div class="carousel-dots" id="carouselDots">
+                    <!-- Dots will be dynamically added -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Group Loans</h3>
+                    <p>Accessible loans for members with favorable terms and group guarantee system</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Merry-go-round</h3>
+                    <p>Rotational savings and credit scheme for regular financial support</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Training Programs</h3>
+                    <p>Financial literacy, business management, and skill development workshops</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Business Support</h3>
+                    <p>Marketing, networking, and advisory services for member businesses</p>
+                </div>
             </div>
         </div>
     </section>
@@ -196,12 +241,12 @@
                             </div>
                         </div>
                         <div class="phone-visible" id="phoneVisible" style="display: none;">
-                            <p><i class="fas fa-phone"></i> Mobile: <a href="tel:+254728560925">0728 560 925</a></p>
-                            <p class="note">This number is for registered members only</p>
+                            <p><i class="fas fa-phone"></i> Mobile: <a href="tel:+254728560925" class="phone-link">0728 560 925</a></p>
+                            <p class="note"><i class="fas fa-info-circle"></i> This number is for registered members only</p>
                         </div>
                     </div>
                     
-                    <div class="registration-form" id="registrationForm">
+                    <div class="registration-form" id="registrationForm" style="display: none;">
                         <h4>Register to Access Contact Details</h4>
                         <form id="contactAccessForm">
                             <div class="form-group">
@@ -218,12 +263,16 @@
                     </div>
                 </div>
                 <div class="location-map">
-                    <div class="map-placeholder">
-                        <i class="fas fa-map"></i>
-                        <p>Interactive Map Here</p>
-                        <p class="map-coordinates">Lat: -1.2833, Long: 34.7500</p>
+                    <div class="map-container">
+                        <div class="map-placeholder">
+                            <i class="fas fa-map-marked-alt"></i>
+                            <p>Kehancha Town, Migori County</p>
+                            <p class="map-coordinates">Lat: -1.2833°S, Long: 34.7500°E</p>
+                            <a href="https://www.google.com/maps/search/?api=1&query=-1.2833,34.7500" target="_blank" class="map-link">
+                                <i class="fas fa-external-link-alt"></i> Open in Google Maps
+                            </a>
+                        </div>
                     </div>
-                    <!-- You can embed Google Maps here -->
                 </div>
             </div>
         </div>
@@ -233,33 +282,65 @@
     <section class="contact-section" id="contact">
         <div class="container">
             <h2 class="section-title">Contact Us</h2>
-            <form id="contactForm" class="contact-form">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required>
+            <div class="contact-wrapper">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject *</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email Address *</label>
-                        <input type="email" id="email" name="email" required>
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+                <div class="contact-info">
+                    <h3>Other Ways to Reach Us</h3>
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>info@umburio.org</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Office Hours</h4>
+                                <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                                <p>Saturday: 9:00 AM - 1:00 PM</p>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-calendar-check"></i>
+                            <div>
+                                <h4>Meeting Days</h4>
+                                <p>Every Fortnight Sunday</p>
+                                <p>2:00 PM - 5:00 PM</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" name="phone">
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject *</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message *</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
-                </div>
-                <button type="submit" class="btn-primary">Send Message</button>
-            </form>
+            </div>
         </div>
     </section>
 
@@ -288,6 +369,13 @@
                     </div>
                     <h3>Social Services</h3>
                     <p>Ministry of Social Services</p>
+                </div>
+                <div class="partner-card">
+                    <div class="partner-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3>Financial Institutions</h3>
+                    <p>Partner Banks & Microfinance</p>
                 </div>
             </div>
         </div>
@@ -326,24 +414,33 @@
                     <p class="footer-description">
                         Empowering communities through collective action and mutual support since 2015.
                     </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
                 
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="#home">Home</a></li>
+                        <li><a href="index.html">Home</a></li>
                         <li><a href="resources.html">Resources</a></li>
-                        <li><a href="#events">Events</a></li>
-                        <li><a href="#services">Services</a></li>
+                        <li><a href="events.html">Events</a></li>
+                        <li><a href="business.html">Businesses</a></li>
+                        <li><a href="member-login.html">Member Login</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-col">
-                    <h4>Legal</h4>
+                    <h4>Services</h4>
                     <ul class="footer-links">
-                        <li><a href="#terms">Terms of Service</a></li>
-                        <li><a href="#privacy">Privacy Policy</a></li>
-                        <li><a href="#disclaimer">Disclaimer</a></li>
+                        <li><a href="#services">Group Loans</a></li>
+                        <li><a href="#services">Merry-go-round</a></li>
+                        <li><a href="#services">Training Programs</a></li>
+                        <li><a href="#services">Business Support</a></li>
+                        <li><a href="resources.html">Document Downloads</a></li>
                     </ul>
                 </div>
                 
@@ -352,6 +449,7 @@
                     <ul class="footer-contact">
                         <li><i class="fas fa-map-marker-alt"></i> Kehancha Town, Migori County</li>
                         <li><i class="fas fa-envelope"></i> info@umburio.org</li>
+                        <li><i class="fas fa-phone"></i> 0728 560 925 (Members Only)</li>
                         <li class="registration-badge">
                             <i class="fas fa-certificate"></i>
                             Registered with Social Services Ministry
@@ -365,11 +463,10 @@
                     <p>&copy; 2025 Umburio Self-Help Group. All rights reserved.</p>
                     <p>Registration No: SHG/MIG/2025/0456</p>
                 </div>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                <div class="footer-links-horizontal">
+                    <a href="#terms">Terms of Service</a> |
+                    <a href="#privacy">Privacy Policy</a> |
+                    <a href="#contact">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -395,10 +492,395 @@
         </div>
     </div>
 
+    <!-- Success Modal -->
+    <div class="modal success-modal" id="successModal">
+        <div class="modal-content">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3 id="successTitle">Success!</h3>
+            <p id="successMessage">Your message has been sent successfully.</p>
+            <button class="btn-primary" id="closeSuccess">OK</button>
+        </div>
+    </div>
+
     <!-- JavaScript Files -->
-    <script src="js/meeting-calculator.js"></script>
-    <script src="js/carousel.js"></script>
-    <script src="js/form-handler.js"></script>
-    <script src="js/main.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navMenu = document.getElementById('navMenu');
+            
+            mobileMenu.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                });
+            });
+
+            // Meeting Date Calculator
+            function calculateNextMeeting() {
+                const lastMeeting = new Date('2026-01-11');
+                const meetingInterval = 14; // days
+                const today = new Date();
+                
+                let nextMeeting = new Date(lastMeeting);
+                
+                // Find the next meeting date
+                while (nextMeeting <= today) {
+                    nextMeeting.setDate(nextMeeting.getDate() + meetingInterval);
+                }
+                
+                // Format the date
+                const options = { 
+                    weekday: 'long', 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                };
+                
+                return nextMeeting.toLocaleDateString('en-US', options);
+            }
+
+            // Update meeting widget
+            document.getElementById('nextMeetingDate').textContent = calculateNextMeeting();
+
+            // Close meeting widget
+            document.getElementById('closeWidget').addEventListener('click', function() {
+                document.getElementById('meetingWidget').style.display = 'none';
+            });
+
+            // Carousel Functionality
+            const carouselTrack = document.getElementById('carouselTrack');
+            const carouselDots = document.getElementById('carouselDots');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            
+            const carouselImages = [
+                {
+                    src: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                    alt: 'Group Meeting',
+                    title: 'Weekly Group Meeting',
+                    desc: 'Members discussing development projects'
+                },
+                {
+                    src: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                    alt: 'Training Session',
+                    title: 'Financial Literacy Training',
+                    desc: 'Members learning about savings and investments'
+                },
+                {
+                    src: 'https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                    alt: 'Community Service',
+                    title: 'Community Clean-up',
+                    desc: 'Members participating in environmental conservation'
+                },
+                {
+                    src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                    alt: 'Business Exhibition',
+                    title: 'Business Exhibition',
+                    desc: 'Showcasing member businesses and products'
+                },
+                {
+                    src: 'https://images.unsplash.com/photo-1551836026-d5c2c5af78e4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80',
+                    alt: 'Loan Disbursement',
+                    title: 'Loan Disbursement Ceremony',
+                    desc: 'Supporting member businesses through loans'
+                }
+            ];
+
+            let currentSlide = 0;
+
+            // Initialize carousel
+            function initCarousel() {
+                carouselTrack.innerHTML = '';
+                carouselDots.innerHTML = '';
+
+                carouselImages.forEach((image, index) => {
+                    // Create carousel item
+                    const carouselItem = document.createElement('div');
+                    carouselItem.className = 'carousel-item';
+                    carouselItem.innerHTML = `
+                        <img src="${image.src}" alt="${image.alt}" loading="lazy">
+                        <div class="carousel-caption">
+                            <h3>${image.title}</h3>
+                            <p>${image.desc}</p>
+                        </div>
+                    `;
+                    carouselTrack.appendChild(carouselItem);
+
+                    // Create dot
+                    const dot = document.createElement('span');
+                    dot.className = 'dot';
+                    if (index === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => goToSlide(index));
+                    carouselDots.appendChild(dot);
+                });
+
+                updateCarousel();
+            }
+
+            function updateCarousel() {
+                const items = document.querySelectorAll('.carousel-item');
+                const dots = document.querySelectorAll('.dot');
+                
+                items.forEach((item, index) => {
+                    item.style.transform = `translateX(${(index - currentSlide) * 100}%)`;
+                    item.classList.toggle('active', index === currentSlide);
+                });
+                
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentSlide);
+                });
+            }
+
+            function goToSlide(index) {
+                currentSlide = index;
+                updateCarousel();
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % carouselImages.length;
+                updateCarousel();
+            }
+
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + carouselImages.length) % carouselImages.length;
+                updateCarousel();
+            }
+
+            // Initialize carousel
+            initCarousel();
+
+            // Event listeners for carousel buttons
+            prevBtn.addEventListener('click', prevSlide);
+            nextBtn.addEventListener('click', nextSlide);
+
+            // Auto slide every 5 seconds
+            let slideInterval = setInterval(nextSlide, 5000);
+
+            // Pause auto-slide on hover
+            carouselTrack.addEventListener('mouseenter', () => {
+                clearInterval(slideInterval);
+            });
+
+            carouselTrack.addEventListener('mouseleave', () => {
+                slideInterval = setInterval(nextSlide, 5000);
+            });
+
+            // Phone number reveal functionality
+            const revealBtn = document.getElementById('revealPhoneBtn');
+            const phoneProtected = document.getElementById('phoneProtected');
+            const phoneVisible = document.getElementById('phoneVisible');
+            const registrationForm = document.getElementById('registrationForm');
+
+            revealBtn.addEventListener('click', function() {
+                phoneProtected.style.display = 'none';
+                registrationForm.style.display = 'block';
+            });
+
+            // Contact access form
+            const contactAccessForm = document.getElementById('contactAccessForm');
+            contactAccessForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = {
+                    name: this.querySelector('input[type="text"]').value,
+                    email: this.querySelector('input[type="email"]').value,
+                    phone: this.querySelector('input[type="tel"]').value,
+                    timestamp: new Date().toISOString()
+                };
+                
+                // In real app, send to Google Sheets
+                console.log('Form data:', formData);
+                
+                // Show success message
+                showSuccess('Registration Successful', 'You can now view our contact number.');
+                
+                // Show phone number
+                registrationForm.style.display = 'none';
+                phoneVisible.style.display = 'block';
+                
+                // Reset form
+                this.reset();
+            });
+
+            // Contact form submission
+            const contactForm = document.getElementById('contactForm');
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value,
+                    timestamp: new Date().toISOString()
+                };
+                
+                // In real app, send to Google Sheets
+                console.log('Contact form data:', formData);
+                
+                // Show success message
+                showSuccess('Message Sent', 'Thank you for your message! We will get back to you soon.');
+                
+                // Reset form
+                this.reset();
+            });
+
+            // Newsletter subscription
+            const newsletterForm = document.getElementById('newsletterForm');
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const email = this.querySelector('input[type="email"]').value;
+                
+                // In real app, send to Google Sheets
+                console.log('Newsletter subscription:', email);
+                
+                // Show success message
+                showSuccess('Subscribed!', 'Thank you for subscribing to our newsletter.');
+                
+                // Reset form
+                this.reset();
+            });
+
+            // Success modal functionality
+            function showSuccess(title, message) {
+                document.getElementById('successTitle').textContent = title;
+                document.getElementById('successMessage').textContent = message;
+                document.getElementById('successModal').style.display = 'flex';
+            }
+
+            document.getElementById('closeSuccess').addEventListener('click', function() {
+                document.getElementById('successModal').style.display = 'none';
+            });
+
+            // Close modal when clicking outside
+            window.addEventListener('click', function(e) {
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modal => {
+                    if (e.target === modal) {
+                        modal.style.display = 'none';
+                    }
+                });
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    
+                    // Skip if it's just "#" or external link
+                    if (href === '#' || href.startsWith('http')) return;
+                    
+                    e.preventDefault();
+                    
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Active navigation on scroll
+            window.addEventListener('scroll', function() {
+                const sections = document.querySelectorAll('section[id]');
+                const navLinks = document.querySelectorAll('.nav-link');
+                
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (scrollY >= sectionTop - 200) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // Make meeting widget draggable on desktop
+            if (window.innerWidth > 768) {
+                makeDraggable(document.getElementById('meetingWidget'));
+            }
+
+            function makeDraggable(element) {
+                let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+                
+                element.querySelector('.widget-header').onmousedown = dragMouseDown;
+                
+                function dragMouseDown(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    document.onmouseup = closeDragElement;
+                    document.onmousemove = elementDrag;
+                }
+                
+                function elementDrag(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    pos1 = pos3 - e.clientX;
+                    pos2 = pos4 - e.clientY;
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    
+                    element.style.top = (element.offsetTop - pos2) + "px";
+                    element.style.right = "auto";
+                    element.style.left = (element.offsetLeft - pos1) + "px";
+                }
+                
+                function closeDragElement() {
+                    document.onmouseup = null;
+                    document.onmousemove = null;
+                }
+            }
+        });
+
+        // Responsive meeting widget
+        window.addEventListener('resize', function() {
+            const meetingWidget = document.getElementById('meetingWidget');
+            if (window.innerWidth <= 768) {
+                meetingWidget.style.position = 'relative';
+                meetingWidget.style.top = 'auto';
+                meetingWidget.style.left = 'auto';
+                meetingWidget.style.right = 'auto';
+                meetingWidget.style.margin = '20px auto';
+                meetingWidget.style.width = '90%';
+                meetingWidget.style.maxWidth = '400px';
+            } else {
+                meetingWidget.style.position = 'fixed';
+                meetingWidget.style.top = '100px';
+                meetingWidget.style.right = '20px';
+                meetingWidget.style.width = '280px';
+            }
+        });
+
+        // Trigger resize on load
+        window.dispatchEvent(new Event('resize'));
+    </script>
 </body>
 </html>
