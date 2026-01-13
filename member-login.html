@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umburio Self-Help Group - Member Login</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/member.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">U</div>
+                <div class="logo-text">
+                    <h1>Umburio</h1>
+                    <p>Self-Help Group</p>
+                </div>
+            </div>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
+                <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+                <li class="nav-item"><a href="business.html" class="nav-link">Businesses</a></li>
+                <li class="nav-item"><a href="member-login.html" class="nav-link active">Member Login</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">More <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="index.html#services">Services</a>
+                        <a href="index.html#community">Community</a>
+                        <a href="index.html#terms">Terms</a>
+                        <a href="index.html#privacy">Privacy</a>
+                        <a href="index.html#contact">Contact</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Member Login Section -->
+    <main class="member-login-container">
+        <div class="container">
+            <div class="login-wrapper">
+                <!-- Login Form -->
+                <div class="login-form-container">
+                    <div class="login-header">
+                        <div class="login-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h2>Member Login</h2>
+                        <p>Access your member dashboard for group services</p>
+                    </div>
+                    
+                    <form id="memberLoginForm">
+                        <div class="form-group">
+                            <label for="loginType">Login Method</label>
+                            <select id="loginType">
+                                <option value="member_number">Member Number</option>
+                                <option value="id_number">ID Number</option>
+                                <option value="phone">Phone Number</option>
+                                <option value="username">Username</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group" id="memberNumberGroup">
+                            <label for="memberNumber">Member Number *</label>
+                            <input type="text" id="memberNumber" placeholder="e.g., UMB001">
+                        </div>
+                        
+                        <div class="form-group" id="idNumberGroup" style="display: none;">
+                            <label for="idNumber">ID Number *</label>
+                            <input type="text" id="idNumber" placeholder="e.g., 12345678">
+                        </div>
+                        
+                        <div class="form-group" id="phoneGroup" style="display: none;">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" placeholder="e.g., 0712345678">
+                        </div>
+                        
+                        <div class="form-group" id="usernameGroup" style="display: none;">
+                            <label for="username">Username *</label>
+                            <input type="text" id="username" placeholder="Enter your username">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">Secret Password *</label>
+                            <div class="password-input">
+                                <input type="password" id="password" required>
+                                <button type="button" class="toggle-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <small class="password-hint">Enter your secret password as provided</small>
+                        </div>
+                        
+                        <div class="form-check">
+                            <input type="checkbox" id="rememberLogin">
+                            <label for="rememberLogin">Remember me on this device</label>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary login-btn">
+                            <i class="fas fa-sign-in-alt"></i> Login to Dashboard
+                        </button>
+                        
+                        <div class="login-error" id="loginError"></div>
+                    </form>
+                    
+                    <div class="login-help">
+                        <p><i class="fas fa-info-circle"></i> Forgot your password? Contact the group secretary.</p>
+                        <p><i class="fas fa-exclamation-triangle"></i> This portal is for registered members only.</p>
+                    </div>
+                </div>
+                
+                <!-- Login Info -->
+                <div class="login-info">
+                    <h3>Member Portal Features</h3>
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <i class="fas fa-hand-holding-usd"></i>
+                            <div>
+                                <h4>Loan Applications</h4>
+                                <p>Apply for group loans with guarantor support</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h4>Merry-go-round</h4>
+                                <p>Track your merry-go-round numbers and payments</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-clipboard-list"></i>
+                            <div>
+                                <h4>Meeting Management</h4>
+                                <p>Mark attendance, view minutes, raise agenda</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-bell"></i>
+                            <div>
+                                <h4>Emergency Alerts</h4>
+                                <p>Send and receive emergency notifications</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-question-circle"></i>
+                            <div>
+                                <h4>Executive Communication</h4>
+                                <p>Raise questions and get responses from executives</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-user-shield"></i>
+                            <div>
+                                <h4>Guarantor Requests</h4>
+                                <p>Accept or reject loan guarantee requests</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="security-notice">
+                        <i class="fas fa-shield-alt"></i>
+                        <p>Your member data is secure and encrypted. All activities are logged for accountability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Same as previous footer -->
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/member-auth.js"></script>
+</body>
+</html>
