@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umburio Self-Help Group - Member Businesses</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/business.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">U</div>
+                <div class="logo-text">
+                    <h1>Umburio</h1>
+                    <p>Self-Help Group</p>
+                </div>
+            </div>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="resources.html" class="nav-link">Resources</a></li>
+                <li class="nav-item"><a href="events.html" class="nav-link">Events</a></li>
+                <li class="nav-item"><a href="business.html" class="nav-link active">Businesses</a></li>
+                <li class="nav-item"><a href="member-login.html" class="nav-link">Member Login</a></li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link">More <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="index.html#services">Services</a>
+                        <a href="index.html#community">Community</a>
+                        <a href="index.html#terms">Terms</a>
+                        <a href="index.html#privacy">Privacy</a>
+                        <a href="index.html#contact">Contact</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Business Directory -->
+    <main class="business-container">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="business-hero">
+                <h1>Support Our Member Businesses</h1>
+                <p>Discover and support businesses owned by Umburio Self-Help Group members. Your support helps our community grow!</p>
+                <button class="btn-primary" id="addBusinessBtn">
+                    <i class="fas fa-store"></i> List Your Business
+                </button>
+            </section>
+
+            <!-- Business Filter -->
+            <section class="business-filter">
+                <div class="filter-categories">
+                    <button class="category-btn active" data-category="all">All Businesses</button>
+                    <button class="category-btn" data-category="retail">Retail</button>
+                    <button class="category-btn" data-category="services">Services</button>
+                    <button class="category-btn" data-category="food">Food & Beverage</button>
+                    <button class="category-btn" data-category="agriculture">Agriculture</button>
+                    <button class="category-btn" data-category="manufacturing">Manufacturing</button>
+                </div>
+                <div class="filter-controls">
+                    <div class="search-box">
+                        <input type="text" id="businessSearch" placeholder="Search businesses...">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <select id="sortBusinesses">
+                        <option value="newest">Newest First</option>
+                        <option value="popular">Most Popular</option>
+                        <option value="rating">Highest Rated</option>
+                        <option value="name">Name A-Z</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Businesses Grid -->
+            <section class="businesses-grid" id="businessesGrid">
+                <!-- Businesses will be loaded here -->
+                <div class="loading-businesses">
+                    <div class="spinner"></div>
+                    <p>Loading businesses...</p>
+                </div>
+            </section>
+
+            <!-- Statistics -->
+            <section class="business-stats">
+                <div class="stat-card">
+                    <i class="fas fa-store"></i>
+                    <h3 id="totalBusinesses">0</h3>
+                    <p>Businesses Listed</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-users"></i>
+                    <h3 id="totalMembers">0</h3>
+                    <p>Business Owners</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-star"></i>
+                    <h3 id="averageRating">0.0</h3>
+                    <p>Average Rating</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-eye"></i>
+                    <h3 id="totalViews">0</h3>
+                    <p>Total Views</p>
+                </div>
+            </section>
+
+            <!-- Business Modal -->
+            <div class="business-modal" id="businessModal">
+                <div class="modal-content">
+                    <span class="close-business">&times;</span>
+                    <h3 id="businessModalTitle">List Your Business</h3>
+                    <form id="businessForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="businessName">Business Name *</label>
+                                <input type="text" id="businessName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="businessOwner">Owner Name *</label>
+                                <input type="text" id="businessOwner" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="businessCategory">Category *</label>
+                                <select id="businessCategory" required>
+                                    <option value="">Select Category</option>
+                                    <option value="retail">Retail Shop</option>
+                                    <option value="services">Services</option>
+                                    <option value="food">Food & Beverage</option>
+                                    <option value="agriculture">Agriculture</option>
+                                    <option value="manufacturing">Manufacturing</option>
+                                    <option value="transport">Transport</option>
+                                    <option value="construction">Construction</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="businessPhone">Phone Number *</label>
+                                <input type="tel" id="businessPhone" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="businessEmail">Email Address</label>
+                                <input type="email" id="businessEmail">
+                            </div>
+                            <div class="form-group">
+                                <label for="businessWebsite">Website</label>
+                                <input type="url" id="businessWebsite" placeholder="https://">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="businessLocation">Location *</label>
+                            <input type="text" id="businessLocation" required placeholder="Street, Town, County">
+                        </div>
+                        <div class="form-group">
+                            <label for="businessDescription">Description *</label>
+                            <textarea id="businessDescription" rows="4" required placeholder="Describe your business, products, and services..."></textarea>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="businessImage">Image URL</label>
+                                <input type="url" id="businessImage" placeholder="https://example.com/image.jpg">
+                            </div>
+                            <div class="form-group">
+                                <label for="businessHours">Operating Hours</label>
+                                <input type="text" id="businessHours" placeholder="e.g., Mon-Fri 8AM-6PM">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="memberNumber">Your Member Number *</label>
+                            <input type="text" id="memberNumber" required placeholder="For verification">
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-check-circle"></i> Submit Business
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Review Modal -->
+            <div class="review-modal" id="reviewModal">
+                <div class="modal-content">
+                    <span class="close-review">&times;</span>
+                    <h3 id="reviewBusinessName">Write a Review</h3>
+                    <form id="reviewForm">
+                        <div class="form-group">
+                            <label for="reviewerName">Your Name *</label>
+                            <input type="text" id="reviewerName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reviewRating">Rating *</label>
+                            <div class="rating-stars" id="ratingStars">
+                                <i class="far fa-star" data-rating="1"></i>
+                                <i class="far fa-star" data-rating="2"></i>
+                                <i class="far fa-star" data-rating="3"></i>
+                                <i class="far fa-star" data-rating="4"></i>
+                                <i class="far fa-star" data-rating="5"></i>
+                            </div>
+                            <input type="hidden" id="reviewRating" value="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reviewTitle">Review Title</label>
+                            <input type="text" id="reviewTitle" placeholder="Summarize your experience">
+                        </div>
+                        <div class="form-group">
+                            <label for="reviewText">Your Review *</label>
+                            <textarea id="reviewText" rows="4" required placeholder="Share your experience with this business..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-paper-plane"></i> Submit Review
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- Same as previous footer -->
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/business.js"></script>
+</body>
+</html>
